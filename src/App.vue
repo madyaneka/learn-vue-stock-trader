@@ -2,7 +2,9 @@
   <div>
     <app-header></app-header>
     <div class="section">
-      <router-view></router-view>
+      <div class="container is-fluid">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
