@@ -20,7 +20,7 @@
         </div>
 
         <div class="navbar-end">
-          <router-link to="/" class="navbar-item">End Day</router-link>
+          <a class="navbar-item" @click="endDay">End Day</a>
           <div class="navbar-item has-dropdown">
             <a class="navbar-link">
               Save & Load
@@ -40,10 +40,22 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   computed: {
     funds() {
       return this.$store.getters.funds
+    }
+  },
+
+  methods: {
+    ...mapActions([
+      'randomizeStocks'
+    ]),
+
+    endDay() {
+      this.randomizeStocks()
     }
   }
 }
