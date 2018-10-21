@@ -30,7 +30,7 @@
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">Save Data</a>
+              <a class="navbar-item" @click="saveData">Save Data</a>
               <a class="navbar-item">Load Data</a>
             </div>
           </div>
@@ -65,6 +65,15 @@ export default {
 
     endDay() {
       this.randomizeStocks()
+    },
+
+    saveData() {
+      const data = {
+        funds: this.$store.getters.funds,
+        stockPortfolio: this.$store.getters.stockPortfolio,
+        stocks: this.$store.getters.stocks
+      }
+      this.$http.put('data.json', data)
     }
   }
 }
