@@ -21,7 +21,10 @@
 
         <div class="navbar-end">
           <a class="navbar-item" @click="endDay">End Day</a>
-          <div class="navbar-item has-dropdown">
+          <div
+            class="navbar-item has-dropdown"
+            :class="{ 'is-active': isDropdownOpen }"
+            @click="isDropdownOpen = !isDropdownOpen">
             <a class="navbar-link">
               Save & Load
             </a>
@@ -43,6 +46,12 @@
 import { mapActions } from 'vuex'
 
 export default {
+  data() {
+    return {
+      isDropdownOpen: false
+    }
+  },
+
   computed: {
     funds() {
       return this.$store.getters.funds
