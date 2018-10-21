@@ -6,6 +6,7 @@ import { routes } from './routes'
 import store from './store/store'
 
 import 'bulma/css/bulma.min.css'
+import 'animate.css/animate.min.css'
 
 Vue.use(VueRouter)
 

@@ -3,7 +3,13 @@
     <app-header></app-header>
     <div class="section">
       <div class="container is-fluid">
-        <router-view></router-view>
+        <transition
+          appear
+          mode="out-in"
+          enter-active-class="animated slideInDown"
+          leave-active-class="animated slideOutUp">
+          <router-view></router-view>
+        </transition>
       </div>
     </div>
   </div>
