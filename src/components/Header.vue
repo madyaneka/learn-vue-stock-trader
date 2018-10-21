@@ -31,8 +31,20 @@
               <a class="navbar-item">Load Data</a>
             </div>
           </div>
+
+          <p class="navbar-item">Funds: {{ funds }}</p>
         </div>
       </div>
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  computed: {
+    funds() {
+      return this.$store.getters.funds
+    }
+  }
+}
+</script>
