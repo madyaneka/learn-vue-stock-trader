@@ -31,7 +31,7 @@
 
             <div class="navbar-dropdown">
               <a class="navbar-item" @click="saveData">Save Data</a>
-              <a class="navbar-item">Load Data</a>
+              <a class="navbar-item" @click="loadData">Load Data</a>
             </div>
           </div>
 
@@ -59,9 +59,10 @@ export default {
   },
 
   methods: {
-    ...mapActions([
-      'randomizeStocks'
-    ]),
+    ...mapActions({
+      randomizeStocks: 'randomizeStocks',
+      fetchData: 'loadData'
+    }),
 
     endDay() {
       this.randomizeStocks()
@@ -74,6 +75,10 @@ export default {
         stocks: this.$store.getters.stocks
       }
       this.$http.put('data.json', data)
+    },
+
+    loadData() {
+      this.fetchData()
     }
   }
 }
