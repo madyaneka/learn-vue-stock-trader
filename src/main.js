@@ -9,6 +9,8 @@ import 'bulma/css/bulma.min.css'
 
 Vue.use(VueRouter)
 
+Vue.filter('currency', (value) => `$${ value.toLocaleString() }`)
+
 const router = new VueRouter({
   mode: 'history',
   routes

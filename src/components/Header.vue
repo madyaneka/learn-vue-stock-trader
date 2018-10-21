@@ -32,7 +32,7 @@
             </div>
           </div>
 
-          <p class="navbar-item">Funds: {{ funds }}</p>
+          <p class="navbar-item">Funds: {{ funds | currency }}</p>
         </div>
       </div>
     </div>
